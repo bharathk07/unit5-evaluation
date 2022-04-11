@@ -13,9 +13,6 @@ function App() {
 		Balls: `${ball}.${remainder}`,
 		countball: 50,
 	});
-	// if (score.Wicket > 10) {
-	// 	score.Wicket = 10;
-	// }
 	function changeSore(value) {
 		setScore({
 			Score: score.Score + value,
@@ -32,7 +29,7 @@ function App() {
 		});
 	}
 
-	function chagneBall(value) {
+	function changeBall(value) {
 		if (value == 0) {
 			setScore({
 				Score: score.Score,
@@ -124,7 +121,7 @@ function App() {
 				{/* Increase the total number of balls thrown here. */}
 				<button
 					onClick={
-						score.Score >= 100 ? () => chagneBall(0) : () => chagneBall(1)
+						score.Score >= 100 ? () => changeBall(0) : () => changeBall(1)
 					}
 				>
 					Add 1
