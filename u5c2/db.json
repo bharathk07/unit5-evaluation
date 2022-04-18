@@ -98,6 +98,17 @@
       "twelth_score": "78",
       "preferred_branch": "science",
       "id": 9
+    },
+    {
+      "first_name": "bharath",
+      "last_name": "k",
+      "email": "bharath_fw15_078@masai.school",
+      "gender": "male",
+      "age": "12",
+      "tenth_score": "12",
+      "twelth_score": "12",
+      "preferred_branch": "",
+      "id": 10
     }
   ]
 }
