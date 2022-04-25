@@ -13,13 +13,8 @@ export const EmployeeList = () => {
 
     })
 
-    //fetchData();
+
   }, [])
-
-  // console.log(users)
-
-  // console.log("users.id",users.id);
-
   return (
     <div className="list_container" style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gridGap: "20px", padding: "20px" }}>
       {/* On clicking this card anywhere, user goes to user details */}
@@ -34,13 +29,6 @@ export const EmployeeList = () => {
               <span className="employee_title">{el.title}</span>
               </Link>
             </div>
-
-            // <p key={user.id}>
-            //   <Link to={`/users/${user.id}`}>{user.id}.{user.first_name}</Link>
-
-            // </p>
-          
-
 
         )
 

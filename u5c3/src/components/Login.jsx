@@ -1,53 +1,53 @@
 import { useContext, useState } from "react";
 import { AuthContext } from "../Context/authContext";
+import { useNavigate } from "react-router-dom";
 
 
 export const Login = () => {
-  //  use reqres to log user in.
+  const [user, setUser] = useState({username:"", password:""});
+    const {handleAuth, isLogin, setIsLogin} = useContext(AuthContext);
+    const [token, setToken] = useState("");
 
-  // const { toggleAuth } = useContext(AuthContext)
-  // const [login, setLogin] = useState({
-  //   email: "",
-  //   password: "",
-  // })
-  // const [form, setForm] = useState([]);
-  // const handleChange = (e) => {
-  //   let { name, value } = e.target;
-  //   setLogin({
-  //     ...login,
-  //     [name]: value
-  //   })
-  // }
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-  //   setForm([...form, login]);
-  //   console.log("submit", form);
-  //   fetch("https://reqres.in/api/login", {
-  //     method: "POST",
-  //     body: JSON.stringify(login),
-  //     headers: {
-  //       "Content-Type": "application/json"
-  //     }
-  //   })
-  //     .then(res => res.json())
-  //     .then((res) => {
-  //       if (res.error) {
-  //         alert("Please give vaild email I'D and password ");
-  //       } else {
-  //         console.log(res.token);
-  //         toggleAuth(res.token);
-  //       }
-  //     })
-  // }
+    const handleChange = (e)=>{
+        let {name, value} = e.target;
+        setUser({...user, [name]:value});
+    }
 
-  //onSubmit={handleSubmit} onChange={handleChange}
+    // const handleSubmit = (e)=>{
+    //     e.preventDefault();
+    //     fetch(`https://reqres.in/api/login`, {
+    //         method: 'POST',
+    //         body: JSON.stringify(user),
+    //         headers: {
+    //             'Content-Type': 'application/json'
+    //         }
+    //     })
+    //         .then((res) => res.json())
+    //         .then((res) => {
+    //             if (res.token) {
+    //                 setIsLogin(true);
+    //                 setToken(res.token);
+    //                 console.log(token)
+    //                 toggleAuth(true);
+    //                 alert("login Successful")
+                    
+
+    //             } 
+    //         })
+    // }
+    const handleSubmit = (e)=>{
+
+    }
+   
+
   return (
-    <form className="loginform" >
+    <form className="loginform" onSubmit={handleSubmit}>
       <input
         name="username"
         type="text"
         placeholder="Enter username"
         className="login_username"
+        onChange={handleChange}
         
       />
       <input
@@ -55,6 +55,7 @@ export const Login = () => {
         type="text"
         placeholder="Enter password"
         className="login_password"
+        onChange={handleChange}
         
       />
       <input type="submit" value="SIGN IN" className="login_submit" />
