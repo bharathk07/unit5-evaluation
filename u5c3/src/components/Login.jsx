@@ -12,28 +12,6 @@ export const Login = () => {
         let {name, value} = e.target;
         setUser({...user, [name]:value});
     }
-
-    // const handleSubmit = (e)=>{
-    //     e.preventDefault();
-    //     fetch(`https://reqres.in/api/login`, {
-    //         method: 'POST',
-    //         body: JSON.stringify(user),
-    //         headers: {
-    //             'Content-Type': 'application/json'
-    //         }
-    //     })
-    //         .then((res) => res.json())
-    //         .then((res) => {
-    //             if (res.token) {
-    //                 setIsLogin(true);
-    //                 setToken(res.token);
-    //                 console.log(token)
-    //                 toggleAuth(true);
-    //                 alert("login Successful")
-                    
-
-    //             } 
-    //         })
     // }
     const handleSubmit = (e)=>{
 
